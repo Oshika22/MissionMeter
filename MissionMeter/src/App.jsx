@@ -11,28 +11,12 @@ import RatingComponent from './components/Rating';
 import Footer from './components/Footer';
 function App() {
   return (
-    // <BudgetProvider>
-    //   <Router>
-    //     <Navbar />
-    //     <Routes>
-    //       <Route path="/" element={<Hero />} />
-    //       <Route path="/NewBudget" element={<NewBudget />} />
-    //       <Route path="/Forecast" element={<Forecast />} />
-    //       <Route path="/Reports" element={<Reports />} />
-    //       <Route path="/predictor" element={<Predictor />} />
-    //     </Routes>
-    //     <Dashboard/>
-    //     <Predictor />
-    //     <ChatBot />
-    //     <Footer />
-    //   </Router>
-    // </BudgetProvider>
     <Router>
       <div className="flex flex-col min-h-screen bg-slate-200">
-        {/* Always visible */}
+
         <Navbar />
 
-        {/* Main content changes based on route */}
+
         <main className="flex-grow">
           <Routes>
             <Route
@@ -41,9 +25,7 @@ function App() {
                 <>
                   <Hero />
                   <CardRevealGrid />
-               
                   <Dashboard />
-                  
                   <RatingComponent/>
                 </>
               }
@@ -54,7 +36,6 @@ function App() {
           </Routes>
         </main>
 
-        {/* Always visible */}
         <Footer />
       </div>
     </Router>

@@ -4,10 +4,21 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { MissionMeterLogoC } from '../assets/images';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFlag } from '@fortawesome/free-solid-svg-icons';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [lang, setLang] = useState('en');
+
+  const translations = {
+    en: { home: "Home", budget: "Budget", chatbot: "Chatbot" },
+    hi: { home: "मुखपृष्ठ", budget: "बजट", chatbot: "चैटबॉट" },
+  };
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const toggleLanguage = () => setLang(lang === 'en' ? 'hi' : 'en');
 
   return (
     <header className="fixed w-full top-0 z-50 bg-indigo-950 bg-opacity-90 shadow-md">
@@ -20,19 +31,28 @@ const Navbar = () => {
           <img
             src={MissionMeterLogoC}
             alt="Hero Illustration"
-            className="h-12  drop-shadow-2xl animate-float"
+            className="h-12 drop-shadow-2xl animate-float"
           />
-          <Link to="/" className='text-indigo-500 font-newsreader'>MissionMeter</Link>
+          <Link to="/" className='text-indigo-500 font-newsreader ml-2'>MissionMeter</Link>
         </motion.div>
 
         <div className="md:hidden text-white" onClick={toggleMenu}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </div>
 
-        <nav className="hidden md:flex gap-8 text-white text-lg">
-          <Link to="/" className="hover:text-indigo-500 font-semibold">Home</Link>
-          <Link to="/predictor" className="hover:text-indigo-500 font-semibold">Budget</Link>
-          <Link to="/Chatbot" className="hover:text-indigo-500 font-semibold">Chatbot</Link>
+        <nav className="hidden md:flex gap-8 text-white text-lg items-center">
+          <Link to="/" className="hover:text-indigo-500 font-semibold">{translations[lang].home}</Link>
+          <Link to="/predictor" className="hover:text-indigo-500 font-semibold">{translations[lang].budget}</Link>
+          <Link to="/Chatbot" className="hover:text-indigo-500 font-semibold">{translations[lang].chatbot}</Link>
+
+          {/* Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="ml-4 p-2 text-white hover:text-indigo-300"
+            title="Switch Language"
+          >
+            <FontAwesomeIcon icon={faFlag} /> {lang === 'en' ? 'EN' : 'HI'}
+          </button>
         </nav>
       </div>
 
@@ -42,10 +62,16 @@ const Navbar = () => {
           initial={{ height: 0 }}
           animate={{ height: 'auto' }}
         >
-          <Link to="/" onClick={toggleMenu}>Home</Link>
-          <Link to="/problem" onClick={toggleMenu}>Problem</Link>
-          <Link to="/solution" onClick={toggleMenu}>Solution</Link>
-          <Link to="/contact" onClick={toggleMenu}>Contact</Link>
+          <Link to="/" onClick={toggleMenu}>{translations[lang].home}</Link>
+          <Link to="/predictor" onClick={toggleMenu}>{translations[lang].budget}</Link>
+          <Link to="/Chatbot" onClick={toggleMenu}>{translations[lang].chatbot}</Link>
+          <button
+            onClick={() => { toggleLanguage(); toggleMenu(); }}
+            className="mt-2 p-2 text-white hover:text-indigo-300"
+            title="Switch Language"
+          >
+            <FontAwesomeIcon icon={faFlag} /> {lang === 'en' ? 'EN' : 'HI'}
+          </button>
         </motion.div>
       )}
     </header>

@@ -2,6 +2,8 @@ from flask import request, jsonify
 import requests
 API_KEY = ""
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
+
+# Used mistralai from open router api 
 def call_openrouter(prompt):
     headers = {
         "Authorization": f"Bearer {API_KEY}",
