@@ -32,18 +32,20 @@ const Hero = () => {
 
       {/* Buttons */}
       <div className="mt-6 flex flex-wrap gap-4 justify-center z-10">
-        <motion.button
+        <motion.a
+          href="#dashboard"
           whileHover={{ scale: 1.05 }}
           className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-xl text-lg transition-all duration-300"
         >
           Get Started
-        </motion.button>
-        <motion.button
+        </motion.a>
+        <motion.a
+          href="#AimMission"
           whileHover={{ scale: 1.05 }}
           className="border border-white text-white px-6 py-3 rounded-xl text-lg hover:bg-white hover:text-black transition-all duration-300"
         >
           Learn More
-        </motion.button>
+        </motion.a>
       </div>
     </section>
   )

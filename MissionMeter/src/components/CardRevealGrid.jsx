@@ -21,7 +21,7 @@ const cards = [
 
 export default function RevealCardGrid() {
   return (
-    <div className="py-10 px-6 md:px-16 min-h-screen mt-10">
+    <div id="AimMission" className="py-10 px-6 md:px-16 min-h-screen mt-10">
       <h2 className="text-6xl font-bold text-center text-indigo-700 mb-10">
         Our Purpose
       </h2>

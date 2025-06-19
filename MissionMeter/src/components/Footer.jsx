@@ -22,13 +22,13 @@ const Footer = () => {
 
         {/* Social Icons */}
         <div className="flex space-x-6 justify-center">
-          <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" className="transition hover:scale-110 hover:text-pink-400">
+          <a href="https://github.com/Oshika22/MissionMeter" target="_blank" rel="noopener noreferrer" className="transition hover:scale-110 hover:text-pink-400">
             <FontAwesomeIcon icon={faGithub} size="lg" />
           </a>
-          <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="transition hover:scale-110 hover:text-blue-400">
+          <a href="https://www.linkedin.com/in/oshika-sharma-a1120529a/" target="_blank" rel="noopener noreferrer" className="transition hover:scale-110 hover:text-blue-400">
             <FontAwesomeIcon icon={faLinkedin} size="lg" />
           </a>
-          <a href="mailto:yourmail@gmail.com" className="transition hover:scale-110 hover:text-red-400">
+          <a href="mailto:oshika004@gmail.com" className="transition hover:scale-110 hover:text-red-400">
             <FontAwesomeIcon icon={faEnvelope} size="lg" />
           </a>
           <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="transition hover:scale-110 hover:text-pink-500">

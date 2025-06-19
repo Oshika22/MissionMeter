@@ -27,7 +27,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen text-black p-6">
+    <div id="dashboard" className="min-h-screen text-black p-6">
       <h2 className="text-5xl font-bold mb-6 text-center text-indigo-700">Mission Dashboard</h2>
       <div className="max-w-5xl mx-auto bg-slate-50 p-8 rounded-lg shadow-sm">
         
